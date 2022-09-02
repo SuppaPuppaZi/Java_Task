@@ -3,11 +3,9 @@ package com.main;
 import java.util.Map;
 
 public class Calculating {
-
     public static void countCharacters(Map<Character,Integer> list, String fact){
 
         int counter;
-
         for (int i = 0; i < fact.length(); i++) {
             counter = 0;
             for (int j = 0; j < fact.length(); j++) {
@@ -16,11 +14,8 @@ public class Calculating {
                 }
                 list.put(fact.charAt(i), counter);
             }
-
         }
     }
-
-
     public static float getSum(Map<Character,Integer> list){
 
         float sum = 0;
@@ -28,20 +23,16 @@ public class Calculating {
         for(Integer value : list.values()) {
             sum += value;
         }
-
         return sum;
     }
-
 
     public static float getPeriodicity(Map<Character,Integer> list){
         return getSum(list) / list.size();
     }
 
-
     public static int getRandomNumber() {
         return (int) Math.round(Math.random() * 1000);
     }
-
 
     public static String getRightCounterForm(int element) {
 
@@ -55,10 +46,7 @@ public class Calculating {
         } else {
             return " раз";
         }
-
-
     }
-
 
     public static String getPeriodicityResult(Map<Character,Integer> list){
 
@@ -70,13 +58,11 @@ public class Calculating {
 
         for (Map.Entry<Character, Integer> entry : list.entrySet()){
             if(entry.getValue() == Math.round(getPeriodicity(list))){
-                resultInfo.append(entry.getKey()).append("(").append(+entry.getKey()).append(")").append(",");
+                resultInfo.append(entry.getKey()).append("(").append(+entry.getKey()).append(")").append(", ");
                 i++;
                 if(i >= 4) break;
             }
         }
-
-        return resultInfo.substring(0, resultInfo.length() - 1);
+        return resultInfo.substring(0, resultInfo.length() - 2);
     }
-
 }

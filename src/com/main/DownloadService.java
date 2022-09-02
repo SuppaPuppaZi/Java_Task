@@ -31,7 +31,9 @@ public class DownloadService {
                 }
 
                 String readyQuery = sb.toString();
+                System.out.println("GET " + url);
                 System.out.println(readyQuery.substring(0, readyQuery.length() - 1));
+
                 return readyQuery.substring(0, readyQuery.length() - 1);
 
             } else {

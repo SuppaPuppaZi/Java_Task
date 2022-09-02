@@ -7,21 +7,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Calculating calc = new Calculating();
-        DownloadService ds = new DownloadService();
-        Info info = new Info();
-
-        int number = calc.getRandomNumber();
+        int number = Calculating.getRandomNumber();
         String url = "http://numbersapi.com/" + number + "/trivia";
 
-        String fact = ds.NumberFact(url);
+        String fact = DownloadService.NumberFact(url);
         fact = fact.replaceAll("\\s+", "");
 
         Map<Character,Integer> list = new HashMap<>();
 
-        calc.countCharacters(list, fact);
+        Calculating.countCharacters(list, fact);
+        Info.getResultInfo(list);
 
-        info.getResultInfo(list);
     }
 
 
